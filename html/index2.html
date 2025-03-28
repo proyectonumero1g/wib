@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Pagos</title>
+    <link rel="shortcut icon" href="/imagenes/Imagen de WhatsApp 2025-03-20 a las 16.19.14_875a0a33.jpg"
+        type="image/x-icon">
+    <style>
+       * {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/*body{
+    background-color: #f5f2e1;
+} */
+
+@media (max-width: 630px) {
+    body {
+        flex-direction: column;
+    }
+}
+
+.whattsapp-logo {
+    padding: 10px;
+    position: fixed;
+    border-radius: 20px;
+    background-color: hsla(120, 4%, 90%, 0.3);
+    /* Fondo verde con 30% de opacidad */
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+
+.whattsapp-logo svg {
+    width: 60px;
+    /* Ajusta el tamaño del logo */
+    height: 60px;
+    /* Ajusta el tamaño del logo */
+}
+
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #efb810;
+    height: 12vh;
+    border-bottom: 2px solid black;
+    z-index: 1000;
+    /* Asegura que el header esté por encima de otros elementos */
+    transition: top 0.3s;
+    /* Transición suave al ocultarse o mostrarse */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0px 70px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+
+}
+
+a {
+    position: relative;
+    cursor: pointer;
+    color: #efefee;
+    font-size: 25px;
+    padding: 0.5rem 1rem;
+    margin-top: 3rem;
+    text-decoration: none;
+    transition: color 0.25s;
+    z-index: 2;
+
+}
+
+a::after {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border: 3px solid white;
+    scale: 1 0;
+    z-index: 1;
+    transition: 0.45s;
+    border-radius: 30px;
+}
+
+a:hover::after {
+    scale: 1 1;
+}
+
+
+.logo {
+    width: 7%;
+    margin: -40px;
+    border-radius: 9px;
+
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 2px 0;
+    transition: 0.4s;
+}
+
+
+
+
+       
+       
+       
+       
+       
+       
+       /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url(/imagenes/blanco\ y\ amarillo.jpg) no-repeat center center fixed;
+            background-size: cover;
+            color: yellow;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        /* Contenedor principal */
+        .container {
+            width: 350px;
+            padding: 25px;
+            border: 2px solid yellow;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.5);
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para los inputs */
+        .input-box {
+            position: relative;
+            margin: 15px 0;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-bottom: 2px solid yellow;
+            background: transparent;
+            color: yellow;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s ease-in-out;
+            text-align: center;
+        }
+
+        .input-box input:focus {
+            border-bottom: 2px solid white;
+            box-shadow: 0px 5px 10px rgba(255, 255, 0, 0.7);
+        }
+
+        /* Estilo para el botón */
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            background: yellow;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 5px 10px rgba(255, 255, 0, 0.5);
+        }
+
+        button:hover {
+            background: white;
+            color: black;
+            box-shadow: 0px 10px 20px rgba(255, 255, 0, 0.8);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <header id="main-header">
+        <nav>
+            <img class="logo" src="/imagenes/fondo.jpg" alt="Logo">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+
+
+
+
+            <ul class="nav-links">
+                <li><a href="/html/index.html">inicio</a></li>
+               
+                
+
+            </ul>
+
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="container" id="login-container">
+            <h2>🔐 Iniciar Sesión</h2>
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button onclick="login()">Ingresar</button>
+        </div>
+
+        <div class="container" id="app-container" style="display: none;">
+            <h2>📋 Registro de Pagos</h2>
+            <button onclick="generarPagoSemanal()">Generar Pago Semanal</button>
+            <h3>Total Invertido: $<span id="total">0.00</span></h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Monto</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-pagos"></tbody>
+            </table>
+            <button onclick="logout()">Cerrar Sesión</button>
+        </div>
+    </div>
+
+    <script>
+        const usuarios = { admin: "1234" };
+
+        function login() {
+            let user = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+            if (usuarios[user] && usuarios[user] === pass) {
+                localStorage.setItem("sesionActiva", "true");
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("app-container").style.display = "block";
+                cargarPagos();
+            } else {
+                alert("Usuario o contraseña incorrectos");
+            }
+        }
+
+        function generarPagoSemanal() {
+            let pagos = JSON.parse(localStorage.getItem("pagos")) || [];
+            let fecha = new Date();
+            let diaSemana = fecha.getDay();
+            let diferencia = (6 - diaSemana + 7) % 7;
+            fecha.setDate(fecha.getDate() + diferencia);
+            let fechaPago = fecha.toLocaleDateString();
+            let monto = 100; // Puedes cambiar el monto según necesidad
+            pagos.push({ fecha: fechaPago, monto: monto.toFixed(2) });
+            localStorage.setItem("pagos", JSON.stringify(pagos));
+            cargarPagos();
+        }
+
+        function cargarPagos() {
+            let pagos = JSON.parse(localStorage.getItem("pagos")) || [];
+            let total = pagos.reduce((sum, pago) => sum + parseFloat(pago.monto), 0);
+            document.getElementById("total").innerText = total.toLocaleString("es-ES", { minimumFractionDigits: 2 });
+
+            document.getElementById("tabla-pagos").innerHTML = pagos.map((p, i) =>
+                `<tr><td>${p.fecha}</td><td>$${parseFloat(p.monto).toLocaleString("es-ES", { minimumFractionDigits: 2 })}</td><td><button onclick="eliminarPago(${i})">❌</button></td></tr>`
+            ).join("");
+        }
+
+        function eliminarPago(index) {
+            let pagos = JSON.parse(localStorage.getItem("pagos")) || [];
+            pagos.splice(index, 1);
+            localStorage.setItem("pagos", JSON.stringify(pagos));
+            cargarPagos();
+        }
+
+        function logout() {
+            localStorage.removeItem("sesionActiva");
+            document.getElementById("app-container").style.display = "none";
+            document.getElementById("login-container").style.display = "block";
+        }
+
+        window.onload = function () {
+            if (localStorage.getItem("sesionActiva") === "true") {
+                document.getElementById("login-container").style.display = "none";
+                document.getElementById("app-container").style.display = "block";
+                cargarPagos();
+            }
+        };
+    </script>
+</body>
+
+</html>
